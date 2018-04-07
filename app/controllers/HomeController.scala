@@ -23,6 +23,7 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents,
     Ok(indexTemplate())
   }
 
+
   def register() = Action(parse.json){ implicit request => {
     val email = (request.body \ "email").as[String]
     val password = (request.body \ "psw").as[String]
